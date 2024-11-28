@@ -45,3 +45,4 @@ def set_logger(log_name, name, log_file, level):
         logger.addHandler(console_handler)
 
         return logger
+
