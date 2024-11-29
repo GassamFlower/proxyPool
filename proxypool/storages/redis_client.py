@@ -94,7 +94,7 @@ class RedisClient(object):
         判断代理是否存在集合中
         :param proxy: proxy, ip:port,like 8.8.8.8:88
         :param redis_key:
-        :return: true if exists, false otherwise
+        :return: true
         """
         return not self.conn.zscore(redis_key, proxy.string()) is None
 
@@ -106,6 +106,7 @@ class RedisClient(object):
         :param proxy_score_max: 100
         :return: new score
         """
+        logger_info.info(f"max-分数设置为PROXY_SCORE_MAX......")
         return self.conn.zadd(redis_key, {proxy.string(): proxy_score_max})
 
     def count(self, redis_key=REDIS_KEY):
