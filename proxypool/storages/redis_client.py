@@ -12,8 +12,9 @@ from proxypool.schemas.proxy import Proxy
 from proxypool.exceptions.empty import PoolEmptyException
 from proxypool.setting.log_output import set_logger
 from random import choice
+from datetime import date
 
-logger_info = set_logger(log_name='RedisLogger', name='info_redis_cl', log_file="info_redis_cl.log", level=logging.INFO)
+logger_info = set_logger(log_name='RedisLogger', name='info_redis_cl', log_file=f"info_redis_cl_{date.today()}.log", level=logging.INFO)
 PROXY_SCORE_MAX = 100
 PROXY_SCORE_MIN = 0
 PROXY_SCORE_INIT = 10

@@ -12,8 +12,9 @@ from proxypool.setting.log_output import set_logger
 import requests
 import logging
 import time
+from datetime import date
 
-logger_info = set_logger(log_name='CrawlLogger', name='info_crawl', log_file="info_crawl.log", level=logging.INFO)
+logger_info = set_logger(log_name='CrawlLogger', name='info_crawl', log_file=f"info_crawl_{date.today()}.log", level=logging.INFO)
 
 
 class BaseCrawler(object):

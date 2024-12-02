@@ -12,7 +12,8 @@ import logging
 from proxypool.schemas.proxy import Proxy
 from proxypool.setting.log_output import set_logger
 from proxypool.storages.redis_client import RedisClient
-logger_info = set_logger(log_name='TestLogger', name='info_test', log_file="info_test.log", level=logging.INFO)
+from datetime import date
+logger_info = set_logger(log_name='TestLogger', name='info_test', log_file=f"info_test_{date.today()}.log", level=logging.INFO)
 
 
 class Tester(object):
